@@ -163,7 +163,7 @@ describe('on teardown', () => {
     unsubscribe();
 
     // NOTE: We can only observe the async iterator's final run after a macro tick
-    await new Promise(resolve => setTimeout(resolve, 1));
+    await new Promise(resolve => setTimeout(resolve));
     expect(fetch).toHaveBeenCalledTimes(0);
     expect(abort).toHaveBeenCalledTimes(1);
   });
@@ -183,11 +183,11 @@ describe('on teardown', () => {
       })
     );
 
-    await new Promise(resolve => setTimeout(resolve, 1));
+    await new Promise(resolve => setTimeout(resolve));
     unsubscribe();
 
     // NOTE: We can only observe the async iterator's final run after a macro tick
-    await new Promise(resolve => setTimeout(resolve, 1));
+    await new Promise(resolve => setTimeout(resolve));
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(abort).toHaveBeenCalledTimes(1);
   });
