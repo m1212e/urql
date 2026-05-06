@@ -8,11 +8,11 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "@m1212e/urql": "^5.0.2",
     "@m1212e/urql-core": "^6.0.1",
     "graphql": "^16.6.0",
     "react": "18.2.0",
-    "react-native": "0.71.4",
-    "@m1212e/urql": "^5.0.2"
+    "react-native": "0.71.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
