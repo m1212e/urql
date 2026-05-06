@@ -67,12 +67,12 @@
   },
   "dependencies": {
     "@0no-co/graphql.web": "^1.0.13",
-    "@urql/core": "workspace:^6.0.1",
+    "@urql/core": "^6.0.1",
     "wonka": "^6.3.2"
   },
   "devDependencies": {
     "@cypress/react": "^8.0.2",
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "@m1212e/urql-exchange-execute": "workspace:*",
     "@m1212e/urql-introspection": "workspace:*",
     "cypress": "^13.14.0",
