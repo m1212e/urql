@@ -1,5 +1,5 @@
 {
-  "name": "2",
+  "name": "@m1212e/urql-exchange-graphcache",
   "version": "9.0.0",
   "description": "A normalized and configurable cache exchange for urql",
   "sideEffects": false,
