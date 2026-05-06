@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-import { gql, CombinedError } from '@m1212e/urql-core';
+import { gql, CombinedError } from '@urql/core';
 import { minifyIntrospectionQuery } from '@m1212e/urql-introspection';
 import { vi, expect, it, beforeEach, describe, beforeAll } from 'vitest';
 

@@ -97,17 +97,19 @@ invariant(
   'package.json:files must include "dist" and "LICENSE"'
 );
 
-if (pkg.dependencies && pkg.dependencies['@m1212e/urql-core']) {
+const corePackage = pkg.dependencies?.['@m1212e/urql-core'] ? '@m1212e/urql-core' : '@urql/core';
+
+if (pkg.dependencies && pkg.dependencies[corePackage]) {
   invariant(
-    !!pkg.peerDependencies && !!pkg.peerDependencies['@m1212e/urql-core'],
-    'package.json:peerDependencies must contain @m1212e/urql-core.'
+    !!pkg.peerDependencies && !!pkg.peerDependencies[corePackage],
+    `package.json:peerDependencies must contain ${corePackage}.`
   );
 }
 
-if (pkg.peerDependencies && pkg.peerDependencies['@m1212e/urql-core']) {
+if (pkg.peerDependencies && pkg.peerDependencies[corePackage]) {
   invariant(
-    !!pkg.dependencies && !!pkg.dependencies['@m1212e/urql-core'],
-    'package.json:dependencies must contain @m1212e/urql-core.'
+    !!pkg.dependencies && !!pkg.dependencies[corePackage],
+    `package.json:dependencies must contain ${corePackage}.`
   );
 }
 

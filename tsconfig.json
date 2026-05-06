@@ -12,7 +12,9 @@
         "node_modules/@m1212e/urql-*/src",
         "packages/*-urql/src",
         "packages/*/src"
-      ]
+      ],
+      "@urql/core/*": ["node_modules/@urql/core/src/*", "packages/core/src/*"],
+      "@urql/core": ["node_modules/@urql/core/src", "packages/core/src"]
     },
     "esModuleInterop": true,
     "isolatedModules": true,

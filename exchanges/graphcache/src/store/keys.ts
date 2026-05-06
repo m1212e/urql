@@ -1,4 +1,4 @@
-import { stringifyVariables } from '@m1212e/urql-core';
+import { stringifyVariables } from '@urql/core';
 import type { FieldArgs, FieldInfo, KeyInfo } from '../types';
 
 export const keyOfField = (fieldName: string, args?: FieldArgs) =>

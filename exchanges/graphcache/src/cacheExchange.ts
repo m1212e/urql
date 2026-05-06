@@ -4,8 +4,8 @@ import type {
   OperationResult,
   RequestPolicy,
   CacheOutcome,
-} from '@m1212e/urql-core';
-import { formatDocument, makeOperation } from '@m1212e/urql-core';
+} from '@urql/core';
+import { formatDocument, makeOperation } from '@urql/core';
 
 import type { Source } from 'wonka';
 import {

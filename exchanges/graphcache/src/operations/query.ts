@@ -1,5 +1,5 @@
-import type { FormattedNode, CombinedError } from '@m1212e/urql-core';
-import { formatDocument } from '@m1212e/urql-core';
+import type { FormattedNode, CombinedError } from '@urql/core';
+import { formatDocument } from '@urql/core';
 
 import type {
   FieldNode,

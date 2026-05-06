@@ -1,4 +1,4 @@
-import { stringifyVariables } from '@m1212e/urql-core';
+import { stringifyVariables } from '@urql/core';
 import type { Cache, Resolver, Variables, NullArray } from '../types';
 
 export type MergeMode = 'outwards' | 'inwards';

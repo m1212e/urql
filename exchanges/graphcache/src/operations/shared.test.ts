@@ -4,7 +4,7 @@ import {
   FormattedNode,
   formatDocument,
   gql,
-} from '@m1212e/urql-core';
+} from '@urql/core';
 import { FieldNode } from '@0no-co/graphql.web';
 
 import { SelectionIterator, deferRef } from './shared';

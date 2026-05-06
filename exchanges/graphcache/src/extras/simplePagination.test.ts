@@ -1,4 +1,4 @@
-import { gql } from '@m1212e/urql-core';
+import { gql } from '@urql/core';
 import { it, expect, describe } from 'vitest';
 import { __initAnd_query as query } from '../operations/query';
 import { __initAnd_write as write } from '../operations/write';

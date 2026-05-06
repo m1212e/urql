@@ -7,7 +7,7 @@ import type {
 } from '@0no-co/graphql.web';
 import { valueFromASTUntyped, Kind } from '@0no-co/graphql.web';
 
-import type { FormattedNode } from '@m1212e/urql-core';
+import type { FormattedNode } from '@urql/core';
 import { getName, getDirectives } from './node';
 import { invariant } from '../helpers/help';
 import type { Fragments, Variables } from '../types';

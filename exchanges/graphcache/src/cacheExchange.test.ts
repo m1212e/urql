@@ -5,7 +5,7 @@ import {
   Operation,
   OperationResult,
   CombinedError,
-} from '@m1212e/urql-core';
+} from '@urql/core';
 
 import { print, stripIgnoredCharacters } from 'graphql';
 import { vi, expect, it, describe, beforeEach, afterEach } from 'vitest';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { minifyIntrospectionQuery } from '@m1212e/urql-introspection';
-import { formatDocument, gql } from '@m1212e/urql-core';
+import { formatDocument, gql } from '@urql/core';
 import { vi, expect, it, beforeEach, describe } from 'vitest';
 
 import {
