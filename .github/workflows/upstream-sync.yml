@@ -4,11 +4,6 @@ on:
   schedule:
     - cron: '0 6 * * 1'  # Every Monday at 6am UTC
   workflow_dispatch:
-    inputs:
-      force_release:
-        description: 'Force a release even if no new upstream tag'
-        required: false
-        default: 'false'
 
 jobs:
   sync:
@@ -17,8 +12,6 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
-      packages: write
-      pull-requests: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -31,11 +24,10 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-      - name: Add upstream remote
-        run: git remote add upstream https://github.com/urql-community/urql.git
-
       - name: Fetch upstream
-        run: git fetch upstream --tags
+        run: |
+          git remote add upstream https://github.com/urql-community/urql.git
+          git fetch upstream --tags
 
       - name: Check for new upstream release
         id: check
@@ -43,99 +35,50 @@ jobs:
           LAST_SYNCED=$(cat .github/upstream-sync-state 2>/dev/null || echo "")
           UPSTREAM_LATEST=$(git tag --list --sort=-version:refname | grep -E '^@urql/core@' | head -1 || echo "")
 
-          # Fall back to urql@ tag format if no @urql/core@ tags found
-          if [ -z "$UPSTREAM_LATEST" ]; then
-            UPSTREAM_LATEST=$(git tag --list --sort=-version:refname | grep -E '^urql@' | head -1 || echo "")
-          fi
-
-          echo "last_synced=$LAST_SYNCED" >> $GITHUB_OUTPUT
-          echo "upstream_latest=$UPSTREAM_LATEST" >> $GITHUB_OUTPUT
-
-          if [ "$UPSTREAM_LATEST" != "$LAST_SYNCED" ] && [ -n "$UPSTREAM_LATEST" ]; then
-            echo "has_new_release=true" >> $GITHUB_OUTPUT
-            echo "New upstream release detected: $UPSTREAM_LATEST (was: $LAST_SYNCED)"
-          elif [ "${{ github.event.inputs.force_release }}" = "true" ]; then
-            echo "has_new_release=true" >> $GITHUB_OUTPUT
-            echo "Force release requested"
-          else
-            echo "has_new_release=false" >> $GITHUB_OUTPUT
+          if [ "$UPSTREAM_LATEST" = "$LAST_SYNCED" ] || [ -z "$UPSTREAM_LATEST" ]; then
             echo "No new upstream release (latest: $UPSTREAM_LATEST)"
+            echo "has_new_release=false" >> $GITHUB_OUTPUT
+            exit 0
           fi
 
-      - name: Check for new upstream commits
-        id: commits
-        run: |
-          UPSTREAM_HEAD=$(git rev-parse upstream/main)
-          LOCAL_HEAD=$(git rev-parse HEAD)
-          MERGE_BASE=$(git merge-base HEAD upstream/main)
-
-          if [ "$UPSTREAM_HEAD" != "$MERGE_BASE" ]; then
-            echo "has_new_commits=true" >> $GITHUB_OUTPUT
-            COMMIT_COUNT=$(git rev-list --count $MERGE_BASE..upstream/main)
-            echo "Found $COMMIT_COUNT new upstream commits"
-          else
-            echo "has_new_commits=false" >> $GITHUB_OUTPUT
-            echo "No new upstream commits"
-          fi
+          echo "New upstream release: $UPSTREAM_LATEST (was: $LAST_SYNCED)"
+          echo "has_new_release=true" >> $GITHUB_OUTPUT
+          echo "upstream_latest=$UPSTREAM_LATEST" >> $GITHUB_OUTPUT
+          echo "last_synced=$LAST_SYNCED" >> $GITHUB_OUTPUT
 
       - name: Merge upstream changes
-        if: steps.commits.outputs.has_new_commits == 'true'
-        run: |
-          git merge upstream/main --no-edit --strategy-option=ours || {
-            echo "Merge had conflicts - attempting auto-resolution"
-            git checkout --theirs -- pnpm-lock.yaml 2>/dev/null || true
-            git add -A
-            git commit --no-edit || git commit -m "chore: merge upstream changes"
-          }
+        if: steps.check.outputs.has_new_release == 'true'
+        run: git merge upstream/main --no-edit
 
-      - name: Transform changeset files from upstream
-        if: steps.check.outputs.has_new_release == 'true' || steps.commits.outputs.has_new_commits == 'true'
-        run: |
-          # Transform any @urql/ package references in changeset files to @m1212e/urql-
-          find .changeset -name "*.md" -not -name "README.md" | while read f; do
-            # Replace @urql/X with @m1212e/urql-X (but not @urql/core -> keep the name mapping)
-            sed -i \
-              -e "s|'@urql/\([^']*\)'|'@m1212e/urql-\1'|g" \
-              -e 's|"@urql/\([^"]*\)"|"@m1212e/urql-\1"|g' \
-              -e "s|'urql':|'@m1212e/urql':|g" \
-              -e 's|"urql":|"@m1212e/urql":|g' \
-              "$f"
-          done
-          echo "Changeset files transformed"
-
-      - name: Create changeset for new upstream release
+      - name: Transform and create changeset
         if: steps.check.outputs.has_new_release == 'true'
         run: |
           UPSTREAM_TAG="${{ steps.check.outputs.upstream_latest }}"
           LAST_TAG="${{ steps.check.outputs.last_synced }}"
 
-          # Determine bump type by comparing upstream versions
-          # Extract version from tag (e.g., @urql/core@6.1.0 -> 6.1.0, or urql@5.1.0 -> 5.1.0)
+          # Transform any upstream changeset files (@urql/ -> @m1212e/urql-)
+          find .changeset -name "*.md" -not -name "README.md" | xargs -r sed -i \
+            -e "s|'@urql/\([^']*\)'|'@m1212e/urql-\1'|g" \
+            -e "s|'urql':|'@m1212e/urql':|g"
+
+          # Determine bump type from version difference
           NEW_VERSION=$(echo "$UPSTREAM_TAG" | sed 's/.*@//')
           OLD_VERSION=$(echo "$LAST_TAG" | sed 's/.*@//')
+          NEW_MAJOR=$(echo "$NEW_VERSION" | cut -d. -f1)
+          OLD_MAJOR=$(echo "$OLD_VERSION" | cut -d. -f1)
+          NEW_MINOR=$(echo "$NEW_VERSION" | cut -d. -f2)
+          OLD_MINOR=$(echo "$OLD_VERSION" | cut -d. -f2)
 
-          if [ -z "$OLD_VERSION" ]; then
-            BUMP_TYPE="patch"
+          if [ -z "$OLD_VERSION" ] || [ "$NEW_MAJOR" != "$OLD_MAJOR" ]; then
+            BUMP_TYPE="major"
+          elif [ "$NEW_MINOR" != "$OLD_MINOR" ]; then
+            BUMP_TYPE="minor"
           else
-            NEW_MAJOR=$(echo "$NEW_VERSION" | cut -d. -f1)
-            OLD_MAJOR=$(echo "$OLD_VERSION" | cut -d. -f1)
-            NEW_MINOR=$(echo "$NEW_VERSION" | cut -d. -f2)
-            OLD_MINOR=$(echo "$OLD_VERSION" | cut -d. -f2)
-
-            if [ "$NEW_MAJOR" != "$OLD_MAJOR" ]; then
-              BUMP_TYPE="major"
-            elif [ "$NEW_MINOR" != "$OLD_MINOR" ]; then
-              BUMP_TYPE="minor"
-            else
-              BUMP_TYPE="patch"
-            fi
+            BUMP_TYPE="patch"
           fi
 
-          # Check if there's already a changeset for this sync
           SYNC_FILE=".changeset/upstream-sync-$(echo $UPSTREAM_TAG | tr '@/' '--').md"
-          if [ ! -f "$SYNC_FILE" ]; then
-            echo "Creating $BUMP_TYPE changeset for upstream release $UPSTREAM_TAG"
-            cat > "$SYNC_FILE" << CHANGESET
+          cat > "$SYNC_FILE" << CHANGESET
           ---
           '@m1212e/urql': $BUMP_TYPE
           '@m1212e/urql-core': $BUMP_TYPE
@@ -161,42 +104,12 @@ jobs:
 
           Sync with upstream urql release $UPSTREAM_TAG
           CHANGESET
-          fi
 
-      - name: Update sync state
+          echo "$UPSTREAM_TAG" > .github/upstream-sync-state
+
+      - name: Push sync changes
         if: steps.check.outputs.has_new_release == 'true'
         run: |
-          echo "${{ steps.check.outputs.upstream_latest }}" > .github/upstream-sync-state
-
-      - name: Setup pnpm (for lockfile regeneration)
-        if: steps.commits.outputs.has_new_commits == 'true'
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-          run_install: false
-
-      - name: Setup Node (for lockfile regeneration)
-        if: steps.commits.outputs.has_new_commits == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Regenerate lockfile
-        if: steps.commits.outputs.has_new_commits == 'true'
-        run: pnpm install --lockfile-only --ignore-scripts || true
-
-      - name: Commit and push sync changes
-        if: steps.commits.outputs.has_new_commits == 'true' || steps.check.outputs.has_new_release == 'true'
-        run: |
           git add -A
-          if git diff --cached --quiet; then
-            echo "Nothing to commit"
-          else
-            UPSTREAM_TAG="${{ steps.check.outputs.upstream_latest }}"
-            if [ -n "$UPSTREAM_TAG" ] && [ "${{ steps.check.outputs.has_new_release }}" = "true" ]; then
-              git commit -m "chore: sync with upstream $UPSTREAM_TAG"
-            else
-              git commit -m "chore: sync upstream changes"
-            fi
-            git push origin main
-          fi
+          git commit -m "chore: sync with upstream ${{ steps.check.outputs.upstream_latest }}"
+          git push origin main
