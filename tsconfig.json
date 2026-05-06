@@ -2,16 +2,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "urql": ["node_modules/urql/src", "packages/react-urql/src"],
-      "*-urql": ["node_modules/*-urql/src", "packages/*-urql/src"],
-      "@urql/exchange-*": [
-        "node_modules/@urql/exchange-*/src",
+      "@m1212e/urql": ["node_modules/@m1212e/urql/src", "packages/react-urql/src"],
+      "@m1212e/urql-exchange-*": [
+        "node_modules/@m1212e/urql-exchange-*/src",
         "exchanges/*/src"
       ],
-      "@urql/core/*": ["node_modules/@urql/core/src/*", "packages/core/src/*"],
-      "@urql/devtools": ["node_modules/@urql/devtools"],
-      "@urql/*": [
-        "node_modules/@urql/*/src",
+      "@m1212e/urql-core/*": ["node_modules/@m1212e/urql-core/src/*", "packages/core/src/*"],
+      "@m1212e/urql-*": [
+        "node_modules/@m1212e/urql-*/src",
         "packages/*-urql/src",
         "packages/*/src"
       ]
