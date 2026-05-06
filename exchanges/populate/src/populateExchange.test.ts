@@ -16,7 +16,7 @@ import {
   Operation,
   OperationContext,
   makeOperation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { populateExchange } from './populateExchange';
 

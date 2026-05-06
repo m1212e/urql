@@ -1,5 +1,5 @@
 {
-  "name": "@urql/next",
+  "name": "@m1212e/urql-next",
   "version": "2.0.0",
   "description": "Convenience wrappers for using urql with NextJS.",
   "sideEffects": false,
@@ -12,22 +12,22 @@
     "url": "https://github.com/urql-graphql/urql.git",
     "directory": "packages/next-urql"
   },
-  "main": "dist/urql-next",
-  "module": "dist/urql-next.mjs",
-  "types": "dist/urql-next.d.ts",
+  "main": "dist/m1212e-urql-next",
+  "module": "dist/m1212e-urql-next.mjs",
+  "types": "dist/m1212e-urql-next.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-next.d.ts",
-      "import": "./dist/urql-next.mjs",
-      "require": "./dist/urql-next.js",
+      "types": "./dist/m1212e-urql-next.d.ts",
+      "import": "./dist/m1212e-urql-next.mjs",
+      "require": "./dist/m1212e-urql-next.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json",
     "./rsc": {
-      "types": "./dist/urql-next-rsc.d.ts",
-      "import": "./dist/urql-next-rsc.mjs",
-      "require": "./dist/urql-next-rsc.js",
+      "types": "./dist/m1212e-urql-next-rsc.d.ts",
+      "import": "./dist/m1212e-urql-next-rsc.mjs",
+      "require": "./dist/m1212e-urql-next-rsc.js",
       "source": "./src/rsc.ts"
     }
   },
@@ -47,8 +47,8 @@
     "prepublishOnly": "run-s clean build"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
-    "urql": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
+    "@m1212e/urql": "workspace:*",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
     "graphql": "^16.0.0",
@@ -59,10 +59,11 @@
   "peerDependencies": {
     "next": ">=13.0.0",
     "react": ">=18.0.0",
-    "urql": "^5.0.0"
+    "@m1212e/urql": "^5.0.0"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

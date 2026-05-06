@@ -1,5 +1,5 @@
 // Re-export everything from @urql/core
-export * from '@urql/core';
+export * from '@m1212e/urql-core';
 
 // Context exports
 export {

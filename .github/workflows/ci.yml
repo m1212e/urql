@@ -55,8 +55,6 @@ jobs:
       - name: Unit Tests
         run: pnpm run test
 
-      - name: Check for slow types
-        run: pnpm jsr:dryrun
 
   react-e2e:
     name: React E2E
@@ -98,7 +96,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Build
-        run: pnpm -F @urql/core build && pnpm -F urql build
+        run: pnpm -F @m1212e/urql-core build && pnpm -F @m1212e/urql build
 
       - name: e2e tests 🧪
         uses: cypress-io/github-action@v6
@@ -147,7 +145,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Build
-        run: pnpm -F "@urql/core" -F urql -F "@urql/exchange-execute" build
+        run: pnpm -F "@m1212e/urql-core" -F "@m1212e/urql" -F "@m1212e/urql-exchange-execute" build
 
       - name: e2e tests 🧪
         uses: cypress-io/github-action@v6

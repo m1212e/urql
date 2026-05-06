@@ -1,5 +1,5 @@
 {
-  "name": "@urql/exchange-context",
+  "name": "@m1212e/urql-exchange-context",
   "version": "1.0.0",
   "description": "An exchange for setting (a)synchronous operation-context in urql",
   "sideEffects": false,
@@ -19,15 +19,15 @@
     "graphql",
     "exchanges"
   ],
-  "main": "dist/urql-exchange-context",
-  "module": "dist/urql-exchange-context.mjs",
-  "types": "dist/urql-exchange-context.d.ts",
+  "main": "dist/m1212e-urql-exchange-context",
+  "module": "dist/m1212e-urql-exchange-context.mjs",
+  "types": "dist/m1212e-urql-exchange-context.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-exchange-context.d.ts",
-      "import": "./dist/urql-exchange-context.mjs",
-      "require": "./dist/urql-exchange-context.js",
+      "types": "./dist/m1212e-urql-exchange-context.d.ts",
+      "import": "./dist/m1212e-urql-exchange-context.mjs",
+      "require": "./dist/m1212e-urql-exchange-context.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -48,18 +48,19 @@
     "prepublishOnly": "run-s clean build"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0"
+    "@m1212e/urql-core": "^6.0.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

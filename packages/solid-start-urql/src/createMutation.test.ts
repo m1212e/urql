@@ -2,9 +2,9 @@
 
 import { expect, it, describe, vi } from 'vitest';
 import { createMutation } from './createMutation';
-import { createClient } from '@urql/core';
+import { createClient } from '@m1212e/urql-core';
 import { makeSubject } from 'wonka';
-import { OperationResult } from '@urql/core';
+import { OperationResult } from '@m1212e/urql-core';
 
 const client = createClient({
   url: '/graphql',

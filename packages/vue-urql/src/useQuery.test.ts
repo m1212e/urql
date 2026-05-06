@@ -2,7 +2,7 @@ import {
   OperationResult,
   OperationResultSource,
   RequestPolicy,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { computed, nextTick, reactive, readonly, ref } from 'vue';
 import { vi, expect, it, describe } from 'vitest';
 
@@ -13,7 +13,7 @@ vi.mock('./useClient.ts', async () => ({
 }));
 
 import { pipe, makeSubject, fromValue, delay } from 'wonka';
-import { createClient } from '@urql/core';
+import { createClient } from '@m1212e/urql-core';
 import { useQuery, UseQueryArgs } from './useQuery';
 
 const client = createClient({ url: '/graphql', exchanges: [] });

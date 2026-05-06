@@ -1,5 +1,5 @@
 {
-  "name": "urql",
+  "name": "@m1212e/urql",
   "version": "5.0.2",
   "description": "A highly customizable and versatile GraphQL client for React",
   "sideEffects": false,
@@ -20,9 +20,9 @@
     "exchanges",
     "react"
   ],
-  "main": "dist/urql.js",
-  "module": "dist/urql.es.js",
-  "types": "dist/urql.d.ts",
+  "main": "dist/m1212e-urql.js",
+  "module": "dist/m1212e-urql.es.js",
+  "types": "dist/m1212e-urql.d.ts",
   "source": "src/index.ts",
   "files": [
     "LICENSE",
@@ -46,7 +46,7 @@
     "@testing-library/react": "^16.0.1",
     "@types/react": "^18.3.8",
     "@types/react-test-renderer": "^17.0.1",
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "cypress": "^13.14.0",
     "graphql": "^16.6.0",
     "react": "^18.3.1",
@@ -56,14 +56,16 @@
     "react-test-renderer": "^18.3.1"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "react": ">= 16.8.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
-    "provenance": true
+    "access": "public",
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

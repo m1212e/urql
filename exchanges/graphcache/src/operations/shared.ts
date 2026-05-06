@@ -1,4 +1,4 @@
-import type { CombinedError, ErrorLike, FormattedNode } from '@urql/core';
+import type { CombinedError, ErrorLike, FormattedNode } from '@m1212e/urql-core';
 
 import type {
   InlineFragmentNode,

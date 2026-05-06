@@ -1,5 +1,5 @@
 {
-  "name": "@urql/exchange-populate",
+  "name": "@m1212e/urql-exchange-populate",
   "version": "2.0.0",
   "description": "An exchange that automaticcally populates the mutation selection body",
   "sideEffects": false,
@@ -17,15 +17,15 @@
     "graphql",
     "exchanges"
   ],
-  "main": "dist/urql-exchange-populate",
-  "module": "dist/urql-exchange-populate.mjs",
-  "types": "dist/urql-exchange-populate.d.ts",
+  "main": "dist/m1212e-urql-exchange-populate",
+  "module": "dist/m1212e-urql-exchange-populate.mjs",
+  "types": "dist/m1212e-urql-exchange-populate.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-exchange-populate.d.ts",
-      "import": "./dist/urql-exchange-populate.mjs",
-      "require": "./dist/urql-exchange-populate.js",
+      "types": "./dist/m1212e-urql-exchange-populate.d.ts",
+      "import": "./dist/m1212e-urql-exchange-populate.mjs",
+      "require": "./dist/m1212e-urql-exchange-populate.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -47,19 +47,20 @@
     "prepublishOnly": "run-s clean build"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

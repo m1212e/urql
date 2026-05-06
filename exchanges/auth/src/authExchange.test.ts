@@ -18,7 +18,7 @@ import {
   Client,
   Operation,
   OperationResult,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { vi, expect, it } from 'vitest';
 import { print } from 'graphql';

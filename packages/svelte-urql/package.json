@@ -1,5 +1,5 @@
 {
-  "name": "@urql/svelte",
+  "name": "@m1212e/urql-svelte",
   "version": "5.0.0",
   "description": "A highly customizable and versatile GraphQL client for Svelte",
   "sideEffects": false,
@@ -20,15 +20,15 @@
     "exchanges",
     "svelte"
   ],
-  "main": "dist/urql-svelte",
-  "module": "dist/urql-svelte.mjs",
-  "types": "dist/urql-svelte.d.ts",
+  "main": "dist/m1212e-urql-svelte",
+  "module": "dist/m1212e-urql-svelte.mjs",
+  "types": "dist/m1212e-urql-svelte.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-svelte.d.ts",
-      "import": "./dist/urql-svelte.mjs",
-      "require": "./dist/urql-svelte.js",
+      "types": "./dist/m1212e-urql-svelte.d.ts",
+      "import": "./dist/m1212e-urql-svelte.mjs",
+      "require": "./dist/m1212e-urql-svelte.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -49,20 +49,21 @@
     "prepublishOnly": "run-s clean build"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "svelte": "^3.0.0 || ^4.0.0 || ^5.0.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0",
     "svelte": "^3.20.0"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

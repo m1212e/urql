@@ -8,7 +8,7 @@ import {
   OperationResultSource,
   createClient,
   gql,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { makeSubject } from 'wonka';
 import { createEffect } from 'solid-js';
 

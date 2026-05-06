@@ -10,7 +10,7 @@ import {
   map,
 } from 'wonka';
 
-import { Client, Operation, OperationResult, CombinedError } from '@urql/core';
+import { Client, Operation, OperationResult, CombinedError } from '@m1212e/urql-core';
 
 import { vi, expect, it } from 'vitest';
 import {

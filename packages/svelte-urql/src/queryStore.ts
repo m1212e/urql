@@ -4,8 +4,8 @@ import type {
   AnyVariables,
   OperationContext,
   RequestPolicy,
-} from '@urql/core';
-import { createRequest } from '@urql/core';
+} from '@m1212e/urql-core';
+import { createRequest } from '@m1212e/urql-core';
 
 import type { Source } from 'wonka';
 import {
@@ -106,7 +106,7 @@ export type QueryArgs<
  *
  * @example
  * ```ts
- * import { queryStore, gql, getContextClient } from '@urql/svelte';
+ * import { queryStore, gql, getContextClient } from '@m1212e/urql-svelte';
  *
  * const todos = queryStore({
  *   client: getContextClient(),

@@ -6,7 +6,7 @@ import {
   Provider,
   cacheExchange,
   fetchExchange,
-} from '@urql/solid-start';
+} from '@m1212e/urql-solid-start';
 
 const client = createClient({
   url: 'https://trygql.formidable.dev/graphql/basic-pokedex',

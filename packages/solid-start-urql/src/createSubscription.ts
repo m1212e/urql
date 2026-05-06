@@ -7,7 +7,7 @@ import {
   type OperationResult,
   type CombinedError,
   createRequest,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { useClient } from './context';
 import { createStore, produce, reconcile } from 'solid-js/store';
 import {

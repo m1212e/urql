@@ -17,8 +17,8 @@ import {
   GraphQLScalarType,
 } from 'graphql';
 import { pipe, tap, map } from 'wonka';
-import type { Exchange, Operation } from '@urql/core';
-import { stringifyVariables } from '@urql/core';
+import type { Exchange, Operation } from '@m1212e/urql-core';
+import { stringifyVariables } from '@m1212e/urql-core';
 
 import type { GraphQLFlatType } from './helpers/node';
 import { getName, unwrapType } from './helpers/node';

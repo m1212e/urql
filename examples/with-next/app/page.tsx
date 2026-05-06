@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { cacheExchange, createClient, fetchExchange, gql } from '@urql/core';
-import { registerUrql } from '@urql/next/rsc';
+import { cacheExchange, createClient, fetchExchange, gql } from '@m1212e/urql-core';
+import { registerUrql } from '@m1212e/urql-next/rsc';
 
 const makeClient = () => {
   return createClient({

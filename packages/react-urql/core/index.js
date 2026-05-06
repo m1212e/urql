@@ -1,1 +1,1 @@
-module.exports = require('@urql/core');
+module.exports = require('@m1212e/urql-core');

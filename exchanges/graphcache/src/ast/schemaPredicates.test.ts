@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest';
 
 import { buildClientSchema } from './schema';
 import * as SchemaPredicates from './schemaPredicates';
-import { minifyIntrospectionQuery } from '@urql/introspection';
+import { minifyIntrospectionQuery } from '@m1212e/urql-introspection';
 
 const mocked = (x: any): any => x;
 

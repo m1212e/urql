@@ -2,7 +2,7 @@
 
 import { FunctionalComponent as FC, h } from 'preact';
 import { render, cleanup, act } from '@testing-library/preact';
-import { OperationContext } from '@urql/core';
+import { OperationContext } from '@m1212e/urql-core';
 import {
   vi,
   expect,

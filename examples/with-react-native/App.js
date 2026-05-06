@@ -1,5 +1,5 @@
 import React from 'react';
-import { Client, Provider, cacheExchange, fetchExchange } from 'urql';
+import { Client, Provider, cacheExchange, fetchExchange } from '@m1212e/urql';
 
 import PokemonList from './src/screens/PokemonList';
 

@@ -17,8 +17,8 @@ import type {
   Exchange,
   Operation,
   OperationContext,
-} from '@urql/core';
-import { makeOperation, stringifyDocument } from '@urql/core';
+} from '@m1212e/urql-core';
+import { makeOperation, stringifyDocument } from '@m1212e/urql-core';
 
 import { hash } from './sha256';
 
@@ -117,8 +117,8 @@ export interface PersistedExchangeOptions {
  *
  * @example
  * ```ts
- * import { Client, cacheExchange, fetchExchange } from '@urql/core';
- * import { persistedExchange } from '@urql/exchange-persisted';
+ * import { Client, cacheExchange, fetchExchange } from '@m1212e/urql-core';
+ * import { persistedExchange } from '@m1212e/urql-exchange-persisted';
  *
  * const client = new Client({
  *   url: 'URL',

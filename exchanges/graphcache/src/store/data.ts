@@ -1,4 +1,4 @@
-import { stringifyVariables } from '@urql/core';
+import { stringifyVariables } from '@m1212e/urql-core';
 
 import type {
   Link,

@@ -1,5 +1,5 @@
-import type { TypedDocumentNode } from '@urql/core';
-import { formatDocument, createRequest } from '@urql/core';
+import type { TypedDocumentNode } from '@m1212e/urql-core';
+import { formatDocument, createRequest } from '@m1212e/urql-core';
 
 import type {
   Cache,

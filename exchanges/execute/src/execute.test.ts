@@ -12,7 +12,7 @@ vi.mock('graphql', async () => {
   };
 });
 
-import { fetchExchange } from '@urql/core';
+import { fetchExchange } from '@m1212e/urql-core';
 import { executeExchange } from './execute';
 import { execute, print, subscribe } from 'graphql';
 import {
@@ -34,7 +34,7 @@ import {
   makeOperation,
   Client,
   OperationResult,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 const mocked = (x: any): any => x;
 

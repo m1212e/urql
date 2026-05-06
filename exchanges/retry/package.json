@@ -1,5 +1,5 @@
 {
-  "name": "@urql/exchange-retry",
+  "name": "@m1212e/urql-exchange-retry",
   "version": "2.0.0",
   "description": "An exchange for operation retry support in urql",
   "sideEffects": false,
@@ -19,15 +19,15 @@
     "exchanges",
     "retry"
   ],
-  "main": "dist/urql-exchange-retry",
-  "module": "dist/urql-exchange-retry.mjs",
-  "types": "dist/urql-exchange-retry.d.ts",
+  "main": "dist/m1212e-urql-exchange-retry",
+  "module": "dist/m1212e-urql-exchange-retry.mjs",
+  "types": "dist/m1212e-urql-exchange-retry.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-exchange-retry.d.ts",
-      "import": "./dist/urql-exchange-retry.mjs",
-      "require": "./dist/urql-exchange-retry.js",
+      "types": "./dist/m1212e-urql-exchange-retry.d.ts",
+      "import": "./dist/m1212e-urql-exchange-retry.mjs",
+      "require": "./dist/m1212e-urql-exchange-retry.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -48,18 +48,19 @@
     "prepublishOnly": "run-s clean build"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0"
+    "@m1212e/urql-core": "^6.0.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

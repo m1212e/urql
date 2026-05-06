@@ -7,7 +7,7 @@ import type {
   CombinedError,
   OperationContext,
   Operation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { useClient } from '../context';
 import { useSource } from './useSource';
@@ -196,7 +196,7 @@ export type UseSubscriptionResponse<
  *
  * @example
  * ```ts
- * import { gql, useSubscription } from '@urql/preact';
+ * import { gql, useSubscription } from '@m1212e/urql-preact';
  *
  * const NotificationsSubscription = gql`
  *   subscription { newNotification { id, text } }

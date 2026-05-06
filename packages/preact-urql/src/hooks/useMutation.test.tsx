@@ -3,7 +3,7 @@
 import { FunctionalComponent as FC, h } from 'preact';
 import { render, cleanup, act } from '@testing-library/preact';
 import { print } from 'graphql';
-import { gql } from '@urql/core';
+import { gql } from '@m1212e/urql-core';
 import { fromValue, delay, pipe } from 'wonka';
 import {
   vi,

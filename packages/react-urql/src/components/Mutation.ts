@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import type { AnyVariables, DocumentInput } from '@urql/core';
+import type { AnyVariables, DocumentInput } from '@m1212e/urql-core';
 
 import type { UseMutationState, UseMutationExecute } from '../hooks';
 import { useMutation } from '../hooks';

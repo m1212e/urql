@@ -53,11 +53,11 @@ for (const example of examples) {
 
   if (
     hadMatch &&
-    !(manifest.devDependencies || {})['@urql/core'] &&
-    !(manifest.dependencies || {})['@urql/core']
+    !(manifest.devDependencies || {})['@m1212e/urql-core'] &&
+    !(manifest.dependencies || {})['@m1212e/urql-core']
   ) {
-    (manifest.dependencies || manifest.devDependencies || {})['@urql/core'] =
-      packages['@urql/core'];
+    (manifest.dependencies || manifest.devDependencies || {})['@m1212e/urql-core'] =
+      packages['@m1212e/urql-core'];
   }
 
   await updatePackageManifest(example, manifest);

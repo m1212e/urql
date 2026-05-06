@@ -1,5 +1,5 @@
 import { pipe, tap } from 'wonka';
-import type { Exchange, Operation } from '@urql/core';
+import type { Exchange, Operation } from '@m1212e/urql-core';
 
 export interface RefocusOptions {
   /** The minimum time in milliseconds to wait before another refocus can trigger.

@@ -38,10 +38,10 @@ invariant(
   'package.json:publishConfig.provenance must be set to true'
 );
 
-if (pkg.name.startsWith('@urql/')) {
+if (pkg.name.startsWith('@m1212e/urql')) {
   invariant(
     pkg.publishConfig.access === 'public',
-    'package.json:publishConfig.access must be set to public for @urql/* packages'
+    'package.json:publishConfig.access must be set to public for @m1212e/* packages'
   );
 }
 
@@ -97,17 +97,17 @@ invariant(
   'package.json:files must include "dist" and "LICENSE"'
 );
 
-if (pkg.dependencies && pkg.dependencies['@urql/core']) {
+if (pkg.dependencies && pkg.dependencies['@m1212e/urql-core']) {
   invariant(
-    !!pkg.peerDependencies && !!pkg.peerDependencies['@urql/core'],
-    'package.json:peerDependencies must contain @urql/core.'
+    !!pkg.peerDependencies && !!pkg.peerDependencies['@m1212e/urql-core'],
+    'package.json:peerDependencies must contain @m1212e/urql-core.'
   );
 }
 
-if (pkg.peerDependencies && pkg.peerDependencies['@urql/core']) {
+if (pkg.peerDependencies && pkg.peerDependencies['@m1212e/urql-core']) {
   invariant(
-    !!pkg.dependencies && !!pkg.dependencies['@urql/core'],
-    'package.json:dependencies must contain @urql/core.'
+    !!pkg.dependencies && !!pkg.dependencies['@m1212e/urql-core'],
+    'package.json:dependencies must contain @m1212e/urql-core.'
   );
 }
 

@@ -7,7 +7,7 @@ import {
   cacheExchange,
   fetchExchange,
   createClient,
-} from '@urql/next';
+} from '@m1212e/urql-next';
 
 export default function Layout({ children }: React.PropsWithChildren) {
   const [client, ssr] = useMemo(() => {

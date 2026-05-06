@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { gql } from '@urql/core';
+import { gql } from '@m1212e/urql-core';
 import { renderHook } from '@testing-library/react';
 import { it, expect } from 'vitest';
 import { useRequest } from './useRequest';

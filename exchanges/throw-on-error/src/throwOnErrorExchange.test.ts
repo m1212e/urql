@@ -9,7 +9,7 @@ import {
   ExchangeIO,
   Client,
   CombinedError,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { throwOnErrorExchange } from './throwOnErrorExchange';
 

@@ -13,7 +13,7 @@ import type {
   RequestPolicy,
   OperationResult,
   Operation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { useClient } from '../context';
 import { useRequest } from './useRequest';
@@ -202,7 +202,7 @@ const isSuspense = (client: Client, context?: Partial<OperationContext>) =>
  *
  * @example
  * ```ts
- * import { gql, useQuery } from 'urql';
+ * import { gql, useQuery } from '@m1212e/urql';
  *
  * const TodosQuery = gql`
  *   query { todos { id, title } }

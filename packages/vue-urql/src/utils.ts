@@ -8,8 +8,8 @@ import type {
   OperationContext,
   OperationResult,
   OperationResultSource,
-} from '@urql/core';
-import { createRequest } from '@urql/core';
+} from '@m1212e/urql-core';
+import { createRequest } from '@m1212e/urql-core';
 import { type Ref, unref } from 'vue';
 import { watchEffect, isReadonly, computed, ref, shallowRef, isRef } from 'vue';
 import type { UseSubscriptionArgs } from './useSubscription';

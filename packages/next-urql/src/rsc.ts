@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { Client } from '@urql/core';
+import type { Client } from '@m1212e/urql-core';
 
 /** Function to cache an urql-client across React Server Components.
  *
@@ -8,8 +8,8 @@ import type { Client } from '@urql/core';
  *
  * @example
  * ```ts
- * import { cacheExchange, createClient, fetchExchange, gql } from '@urql/core';
- * import { registerUrql } from '@urql/next/rsc';
+ * import { cacheExchange, createClient, fetchExchange, gql } from '@m1212e/urql-core';
+ * import { registerUrql } from '@m1212e/urql-next/rsc';
  * const makeClient = () => {
  *   return createClient({
  *     url: 'https://trygql.formidable.dev/graphql/basic-pokedex',

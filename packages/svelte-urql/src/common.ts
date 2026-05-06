@@ -1,5 +1,5 @@
 import type { Readable, Writable } from 'svelte/store';
-import type { AnyVariables, OperationResult } from '@urql/core';
+import type { AnyVariables, OperationResult } from '@m1212e/urql-core';
 import type { Source } from 'wonka';
 import { make } from 'wonka';
 

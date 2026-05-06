@@ -5,7 +5,7 @@ import type {
   TypedDocumentNode,
   FormattedNode,
   ErrorLike,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import type { DocumentNode, FragmentDefinitionNode } from '@0no-co/graphql.web';
 import type { IntrospectionData } from './ast';

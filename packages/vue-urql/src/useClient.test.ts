@@ -3,7 +3,7 @@
 import { expect, it, describe } from 'vitest';
 import { defineComponent, effectScope, h } from 'vue';
 import { mount } from '@vue/test-utils';
-import { Client } from '@urql/core';
+import { Client } from '@m1212e/urql-core';
 import { useClient, provideClient } from './useClient';
 
 describe('provideClient and useClient', () => {

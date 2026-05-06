@@ -1,5 +1,5 @@
 {
-  "name": "@urql/exchange-execute",
+  "name": "@m1212e/urql-exchange-execute",
   "version": "3.0.0",
   "description": "An exchange for executing queries against a local schema in urql",
   "sideEffects": false,
@@ -20,15 +20,15 @@
     "graphql",
     "exchanges"
   ],
-  "main": "dist/urql-exchange-execute",
-  "module": "dist/urql-exchange-execute.mjs",
-  "types": "dist/urql-exchange-execute.d.ts",
+  "main": "dist/m1212e-urql-exchange-execute",
+  "module": "dist/m1212e-urql-exchange-execute.mjs",
+  "types": "dist/m1212e-urql-exchange-execute.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-exchange-execute.d.ts",
-      "import": "./dist/urql-exchange-execute.mjs",
-      "require": "./dist/urql-exchange-execute.js",
+      "types": "./dist/m1212e-urql-exchange-execute.d.ts",
+      "import": "./dist/m1212e-urql-exchange-execute.mjs",
+      "require": "./dist/m1212e-urql-exchange-execute.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -49,19 +49,20 @@
     "prepublishOnly": "run-s clean build"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

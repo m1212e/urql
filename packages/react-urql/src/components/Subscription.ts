@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import type { AnyVariables } from '@urql/core';
+import type { AnyVariables } from '@m1212e/urql-core';
 
 import type {
   UseSubscriptionArgs,

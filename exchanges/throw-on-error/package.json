@@ -1,5 +1,5 @@
 {
-  "name": "@urql/exchange-throw-on-error",
+  "name": "@m1212e/urql-exchange-throw-on-error",
   "version": "1.0.0",
   "description": "An exchange for throw-on-error support in urql",
   "sideEffects": false,
@@ -19,15 +19,15 @@
     "exchanges",
     "throw on error"
   ],
-  "main": "dist/urql-exchange-throw-on-error",
-  "module": "dist/urql-exchange-throw-on-error.mjs",
-  "types": "dist/urql-exchange-throw-on-error.d.ts",
+  "main": "dist/m1212e-urql-exchange-throw-on-error",
+  "module": "dist/m1212e-urql-exchange-throw-on-error.mjs",
+  "types": "dist/m1212e-urql-exchange-throw-on-error.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-exchange-throw-on-error.d.ts",
-      "import": "./dist/urql-exchange-throw-on-error.mjs",
-      "require": "./dist/urql-exchange-throw-on-error.js",
+      "types": "./dist/m1212e-urql-exchange-throw-on-error.d.ts",
+      "import": "./dist/m1212e-urql-exchange-throw-on-error.mjs",
+      "require": "./dist/m1212e-urql-exchange-throw-on-error.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -48,19 +48,20 @@
     "prepublishOnly": "run-s clean build"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0"
+    "@m1212e/urql-core": "^6.0.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "graphql-toe": "^1.0.0-rc.0",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

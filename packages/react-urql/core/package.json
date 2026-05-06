@@ -5,6 +5,6 @@
   "module": "index.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@urql/core": "^1.7.0"
+    "@m1212e/urql-core": "^1.7.0"
   }
 }

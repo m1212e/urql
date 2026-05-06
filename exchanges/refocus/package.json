@@ -1,5 +1,5 @@
 {
-  "name": "@urql/exchange-refocus",
+  "name": "@m1212e/urql-exchange-refocus",
   "version": "2.1.0",
   "description": "An exchange that dispatches active operations when the window regains focus",
   "sideEffects": false,
@@ -20,15 +20,15 @@
     "react",
     "focus"
   ],
-  "main": "dist/urql-exchange-refocus",
-  "module": "dist/urql-exchange-refocus.mjs",
-  "types": "dist/urql-exchange-refocus.d.ts",
+  "main": "dist/m1212e-urql-exchange-refocus",
+  "module": "dist/m1212e-urql-exchange-refocus.mjs",
+  "types": "dist/m1212e-urql-exchange-refocus.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-exchange-refocus.d.ts",
-      "import": "./dist/urql-exchange-refocus.mjs",
-      "require": "./dist/urql-exchange-refocus.js",
+      "types": "./dist/m1212e-urql-exchange-refocus.d.ts",
+      "import": "./dist/m1212e-urql-exchange-refocus.mjs",
+      "require": "./dist/m1212e-urql-exchange-refocus.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -50,18 +50,19 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.4",
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0"
+    "@m1212e/urql-core": "^6.0.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

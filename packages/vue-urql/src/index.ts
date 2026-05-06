@@ -1,4 +1,4 @@
-export * from '@urql/core';
+export * from '@m1212e/urql-core';
 
 export * from './useClientHandle';
 export { install, provideClient } from './useClient';

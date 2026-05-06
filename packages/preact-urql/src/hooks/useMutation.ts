@@ -8,8 +8,8 @@ import type {
   OperationContext,
   CombinedError,
   Operation,
-} from '@urql/core';
-import { createRequest } from '@urql/core';
+} from '@m1212e/urql-core';
+import { createRequest } from '@m1212e/urql-core';
 
 import { useClient } from '../context';
 import { initialState } from './constants';
@@ -123,7 +123,7 @@ export type UseMutationResponse<
  *
  * @example
  * ```ts
- * import { gql, useMutation } from '@urql/preact';
+ * import { gql, useMutation } from '@m1212e/urql-preact';
  *
  * const UpdateTodo = gql`
  *   mutation ($id: ID!, $title: String!) {

@@ -1,5 +1,5 @@
 import { pipe, subscribe } from 'wonka';
-import type { Client, OperationResult } from '@urql/core';
+import type { Client, OperationResult } from '@m1212e/urql-core';
 
 type CacheEntry = OperationResult | Promise<unknown> | undefined;
 

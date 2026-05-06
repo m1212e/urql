@@ -6,7 +6,7 @@ import {
   OperationResult,
   OperationResultSource,
   createClient,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { createQuery } from './createQuery';
 import { fireEvent, render, screen, waitFor } from '@solidjs/testing-library';
 import { Provider } from './context';

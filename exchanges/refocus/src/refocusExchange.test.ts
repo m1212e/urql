@@ -9,7 +9,7 @@ import {
   Operation,
   OperationResult,
   ExchangeIO,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { queryResponse } from '../../../packages/core/src/test-utils';
 import { refocusExchange } from './refocusExchange';

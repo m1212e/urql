@@ -776,7 +776,7 @@ export interface ExchangeInput {
  * @example
  * ```ts
  * import { pipe, onPush } from 'wonka';
- * import { Exchange } from '@urql/core';
+ * import { Exchange } from '@m1212e/urql-core';
  *
  * const debugExchange: Exchange => {
  *   return ops$ => pipe(

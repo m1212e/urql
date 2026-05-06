@@ -1,4 +1,4 @@
-import type { AnyVariables, Client, DocumentInput } from '@urql/core';
+import type { AnyVariables, Client, DocumentInput } from '@m1212e/urql-core';
 import type { WatchStopHandle } from 'vue';
 import { getCurrentInstance, onMounted, onBeforeUnmount } from 'vue';
 
@@ -99,7 +99,7 @@ export interface ClientHandle {
  * @example
  * ```ts
  * import { ref, computed } from 'vue';
- * import { gql, useClientHandle } from '@urql/vue';
+ * import { gql, useClientHandle } from '@m1212e/urql-vue';
  *
  * export default {
  *   async setup() {

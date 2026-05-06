@@ -1,5 +1,5 @@
 ---
-'@urql/exchange-graphcache': patch
+'@m1212e/urql-exchange-graphcache': patch
 ---
 
 add a broadcast api based cross tab sync for cache changes

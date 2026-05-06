@@ -12,7 +12,7 @@ import type {
   OperationContext,
   OperationResult,
   DocumentInput,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { useClient } from './useClient';
 import {
@@ -107,7 +107,7 @@ export interface UseMutationResponse<T, V extends AnyVariables = AnyVariables> {
  *
  * @example
  * ```ts
- * import { gql, useMutation } from '@urql/vue';
+ * import { gql, useMutation } from '@m1212e/urql-vue';
  *
  * const UpdateTodo = gql`
  *   mutation ($id: ID!, $title: String!) {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { Client } from '@urql/core';
+import type { Client } from '@m1212e/urql-core';
 
 const OBJ = {};
 
@@ -23,9 +23,9 @@ export const Context: import('react').Context<Client | object> =
  *
  * @example
  * ```tsx
- * import { Provider } from 'urql';
+ * import { Provider } from '@m1212e/urql';
  * // All of `@urql/core` is also re-exported by `urql`:
- * import { Client, cacheExchange, fetchExchange } from '@urql/core';
+ * import { Client, cacheExchange, fetchExchange } from '@m1212e/urql-core';
  *
  * const client = new Client({
  *   url: 'https://API',

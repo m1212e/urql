@@ -1,5 +1,5 @@
-import type { Exchange } from '@urql/core';
-import { mapExchange } from '@urql/core';
+import type { Exchange } from '@m1212e/urql-core';
+import { mapExchange } from '@m1212e/urql-core';
 import { toe } from 'graphql-toe';
 
 /** Exchange factory that maps the fields of the data to throw an error on access if the field was errored.

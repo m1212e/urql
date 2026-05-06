@@ -3,8 +3,8 @@ import type {
   GraphQLRequestParams,
   Client,
   OperationContext,
-} from '@urql/core';
-import { createRequest } from '@urql/core';
+} from '@m1212e/urql-core';
+import { createRequest } from '@m1212e/urql-core';
 
 import type { Source } from 'wonka';
 import {
@@ -116,7 +116,7 @@ export type SubscriptionArgs<
  *
  * @example
  * ```ts
- * import { subscriptionStore, gql, getContextClient } from '@urql/svelte';
+ * import { subscriptionStore, gql, getContextClient } from '@m1212e/urql-svelte';
  *
  * const todos = subscriptionStore({
  *   client: getContextClient(),

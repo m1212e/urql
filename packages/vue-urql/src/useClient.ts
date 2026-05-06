@@ -1,7 +1,7 @@
 import { type App, getCurrentScope, type Ref } from 'vue';
 import { inject, provide, isRef, shallowRef } from 'vue';
-import type { ClientOptions } from '@urql/core';
-import { Client } from '@urql/core';
+import type { ClientOptions } from '@m1212e/urql-core';
+import { Client } from '@m1212e/urql-core';
 
 export const DEFAULT_KEY = '$urql';
 // WeakMap to store client instances as fallback when client is provided and used in the same component
@@ -22,9 +22,9 @@ const clientsPerScope = new WeakMap<{}, Ref<Client>>();
  * @example
  * ```ts
  * <script setup>
- *   import { provideClient } from '@urql/vue';
+ *   import { provideClient } from '@m1212e/urql-vue';
  *   // All of `@urql/core` is also re-exported by `@urql/vue`:
- *   import { Client, cacheExchange, fetchExchange } from '@urql/core';
+ *   import { Client, cacheExchange, fetchExchange } from '@m1212e/urql-core';
  *
  *   provideClient(new Client({
  *     url: 'https://API',
@@ -64,9 +64,9 @@ export function provideClient(
  *
  * @example
  * ```ts
- * import * as urql from '@urql/vue';
+ * import * as urql from '@m1212e/urql-vue';
  * // All of `@urql/core` is also re-exported by `@urql/vue`:
- * import { cacheExchange, fetchExchange } from '@urql/core';
+ * import { cacheExchange, fetchExchange } from '@m1212e/urql-core';
  *
  * import { createApp } from 'vue';
  * import Root from './App.vue';

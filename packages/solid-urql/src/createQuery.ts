@@ -5,7 +5,7 @@ import {
   type OperationResult,
   type RequestPolicy,
   createRequest,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import {
   batch,
   createComputed,
@@ -153,7 +153,7 @@ export type CreateQueryResult<
  *
  * @example
  * ```tsx
- * import { gql, createQuery } from '@urql/solid';
+ * import { gql, createQuery } from '@m1212e/urql-solid';
  *
  * const TodosQuery = gql`
  *   query { todos { id, title } }

@@ -5,7 +5,7 @@ import {
   type RequestPolicy,
   createRequest,
   type Client,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { useClient, useQuery } from './context';
 
 /**
@@ -18,9 +18,9 @@ import { useClient, useQuery } from './context';
  *
  * @example
  * ```tsx
- * import { createQuery } from '@urql/solid-start';
+ * import { createQuery } from '@m1212e/urql-solid-start';
  * import { createAsync } from '@solidjs/router';
- * import { gql } from '@urql/core';
+ * import { gql } from '@m1212e/urql-core';
  *
  * const POKEMONS_QUERY = gql`
  *   query Pokemons {

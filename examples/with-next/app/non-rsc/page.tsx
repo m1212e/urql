@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Suspense } from 'react';
-import { useQuery, gql } from '@urql/next';
+import { useQuery, gql } from '@m1212e/urql-next';
 
 export default function Page() {
   return (

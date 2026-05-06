@@ -1,5 +1,5 @@
 {
-  "name": "@urql/preact",
+  "name": "@m1212e/urql-preact",
   "version": "5.0.0",
   "description": "A highly customizable and versatile GraphQL client for Preact",
   "sideEffects": false,
@@ -20,15 +20,15 @@
     "exchanges",
     "preact"
   ],
-  "main": "dist/urql-preact",
-  "module": "dist/urql-preact.mjs",
-  "types": "dist/urql-preact.d.ts",
+  "main": "dist/m1212e-urql-preact",
+  "module": "dist/m1212e-urql-preact.mjs",
+  "types": "dist/m1212e-urql-preact.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-preact.d.ts",
-      "import": "./dist/urql-preact.mjs",
-      "require": "./dist/urql-preact.js",
+      "types": "./dist/m1212e-urql-preact.d.ts",
+      "import": "./dist/m1212e-urql-preact.mjs",
+      "require": "./dist/m1212e-urql-preact.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -50,20 +50,21 @@
   },
   "devDependencies": {
     "@testing-library/preact": "^2.0.0",
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0",
     "preact": "^10.13.0"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "preact": ">= 10.0.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

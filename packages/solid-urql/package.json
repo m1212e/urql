@@ -1,5 +1,5 @@
 {
-  "name": "@urql/solid",
+  "name": "@m1212e/urql-solid",
   "version": "1.0.1",
   "description": "A highly customizable and versatile GraphQL client for Solid",
   "sideEffects": false,
@@ -20,15 +20,15 @@
     "exchanges",
     "solid"
   ],
-  "main": "dist/urql-solid",
-  "module": "dist/urql-solid.mjs",
-  "types": "dist/urql-solid.d.ts",
+  "main": "dist/m1212e-urql-solid",
+  "module": "dist/m1212e-urql-solid.mjs",
+  "types": "dist/m1212e-urql-solid.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-solid.d.ts",
-      "import": "./dist/urql-solid.mjs",
-      "require": "./dist/urql-solid.js",
+      "types": "./dist/m1212e-urql-solid.d.ts",
+      "import": "./dist/m1212e-urql-solid.mjs",
+      "require": "./dist/m1212e-urql-solid.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -50,22 +50,23 @@
   },
   "devDependencies": {
     "@solidjs/testing-library": "^0.8.2",
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "graphql": "^16.0.0",
     "jsdom": "^22.1.0",
     "vite-plugin-solid": "^2.7.0"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "solid-js": "^1.7.7"
   },
   "dependencies": {
     "@solid-primitives/utils": "^6.2.1",
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

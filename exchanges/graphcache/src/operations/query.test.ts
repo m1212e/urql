@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-import { gql } from '@urql/core';
-import { minifyIntrospectionQuery } from '@urql/introspection';
+import { gql } from '@m1212e/urql-core';
+import { minifyIntrospectionQuery } from '@m1212e/urql-introspection';
 import { describe, it, beforeEach, beforeAll, expect } from 'vitest';
 
 import { Store } from '../store/store';

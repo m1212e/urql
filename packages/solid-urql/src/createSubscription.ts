@@ -7,7 +7,7 @@ import {
   type OperationResult,
   type CombinedError,
   createRequest,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { useClient } from './context';
 import { createStore, produce, reconcile } from 'solid-js/store';
 import {
@@ -186,7 +186,7 @@ export type CreateSubscriptionResult<
  *
  * @example
  * ```ts
- * import { gql, createSubscription } from '@urql/solid';
+ * import { gql, createSubscription } from '@m1212e/urql-solid';
  *
  * const NotificationsSubscription = gql`
  *   subscription { newNotification { id, text } }

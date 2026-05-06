@@ -1,5 +1,5 @@
 {
-  "name": "@urql/core",
+  "name": "@m1212e/urql-core",
   "version": "6.0.1",
   "description": "The shared core for the highly customizable and versatile GraphQL client",
   "sideEffects": false,
@@ -19,22 +19,22 @@
     "cache",
     "exchanges"
   ],
-  "main": "dist/urql-core",
-  "module": "dist/urql-core.mjs",
-  "types": "dist/urql-core.d.ts",
+  "main": "dist/m1212e-urql-core",
+  "module": "dist/m1212e-urql-core.mjs",
+  "types": "dist/m1212e-urql-core.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-core.d.ts",
-      "import": "./dist/urql-core.mjs",
-      "require": "./dist/urql-core.js",
+      "types": "./dist/m1212e-urql-core.d.ts",
+      "import": "./dist/m1212e-urql-core.mjs",
+      "require": "./dist/m1212e-urql-core.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json",
     "./internal": {
-      "types": "./dist/urql-core-internal.d.ts",
-      "import": "./dist/urql-core-internal.mjs",
-      "require": "./dist/urql-core-internal.js",
+      "types": "./dist/m1212e-urql-core-internal.d.ts",
+      "import": "./dist/m1212e-urql-core-internal.mjs",
+      "require": "./dist/m1212e-urql-core-internal.js",
       "source": "./src/internal/index.ts"
     }
   },
@@ -60,6 +60,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

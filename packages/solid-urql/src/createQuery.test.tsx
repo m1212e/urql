@@ -3,10 +3,10 @@
 import { expect, it, describe, vi } from 'vitest';
 import { CreateQueryState, createQuery } from './createQuery';
 import { renderHook, testEffect } from '@solidjs/testing-library';
-import { createClient } from '@urql/core';
+import { createClient } from '@m1212e/urql-core';
 import { createEffect, createSignal } from 'solid-js';
 import { makeSubject } from 'wonka';
-import { OperationResult, OperationResultSource } from '@urql/core';
+import { OperationResult, OperationResultSource } from '@m1212e/urql-core';
 
 const client = createClient({
   url: '/graphql',

@@ -1,4 +1,4 @@
-import { formatDocument, gql } from '@urql/core';
+import { formatDocument, gql } from '@m1212e/urql-core';
 import { describe, it, expect } from 'vitest';
 import { getMainOperation } from './traversal';
 import { normalizeVariables, filterVariables } from './variables';

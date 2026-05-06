@@ -14,7 +14,7 @@ import type {
   OperationContext,
   RequestPolicy,
   Operation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { useClient } from './useClient';
 
@@ -216,7 +216,7 @@ export type UseQueryResponse<
  *
  * @example
  * ```ts
- * import { gql, useQuery } from '@urql/vue';
+ * import { gql, useQuery } from '@m1212e/urql-vue';
  *
  * const TodosQuery = gql`
  *   query { todos { id, title } }

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type { AnyVariables, DocumentInput, GraphQLRequest } from '@urql/core';
-import { createRequest } from '@urql/core';
+import type { AnyVariables, DocumentInput, GraphQLRequest } from '@m1212e/urql-core';
+import { createRequest } from '@m1212e/urql-core';
 
 /** Creates a request from a query and variables but preserves reference equality if the key isn't changing
  * @internal

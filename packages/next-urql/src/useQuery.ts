@@ -7,8 +7,8 @@ import type {
   Operation,
   OperationContext,
   RequestPolicy,
-} from 'urql';
-import { createRequest, useQuery as orig_useQuery } from 'urql';
+} from '@m1212e/urql';
+import { createRequest, useQuery as orig_useQuery } from '@m1212e/urql';
 import { useUrqlValue } from './useUrqlValue';
 
 /** Input arguments for the {@link useQuery} hook.
@@ -182,7 +182,7 @@ export type UseQueryResponse<
  *
  * @example
  * ```ts
- * import { gql, useQuery } from 'urql';
+ * import { gql, useQuery } from '@m1212e/urql';
  *
  * const TodosQuery = gql`
  *   query { todos { id, title } }

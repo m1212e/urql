@@ -4,7 +4,7 @@
 import { expect, it, describe } from 'vitest';
 import { Provider, useAction, useClient } from './context';
 import { renderHook } from '@solidjs/testing-library';
-import { createClient } from '@urql/core';
+import { createClient } from '@m1212e/urql-core';
 
 describe('context', () => {
   it('should provide client through context', () => {

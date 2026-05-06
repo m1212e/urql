@@ -1,5 +1,5 @@
 import { print } from 'graphql';
-import { createClient } from '@urql/core';
+import { createClient } from '@m1212e/urql-core';
 import { get } from 'svelte/store';
 import { vi, expect, it, describe } from 'vitest';
 

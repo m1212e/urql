@@ -19,8 +19,8 @@ import type {
   DocumentInput,
   AnyVariables,
   OperationInstance,
-} from '@urql/core';
-import { createRequest, makeOperation, makeErrorResult } from '@urql/core';
+} from '@m1212e/urql-core';
+import { createRequest, makeOperation, makeErrorResult } from '@m1212e/urql-core';
 
 /** Utilities to use while refreshing authentication tokens. */
 export interface AuthUtilities {

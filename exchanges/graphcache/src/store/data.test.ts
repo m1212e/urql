@@ -1,6 +1,6 @@
 import { describe, it, beforeEach, expect } from 'vitest';
 import * as InMemoryData from './data';
-import { keyOfField } from './keys';
+import { keyOfField, serializeKeys } from './keys';
 
 let data: InMemoryData.InMemoryData;
 
@@ -590,5 +590,110 @@ describe('deferred changes', () => {
     // The layer is then receiving a noop write
     InMemoryData.noopDataState(data, 1, false);
     expect(data.optimisticOrder).toEqual([]);
+  });
+});
+
+describe('broadcast capture and delta serialization', () => {
+  it('serializePendingDelta captures record writes', () => {
+    InMemoryData.startBroadcastCapture();
+    InMemoryData.writeRecord('Todo:1', 'name', 'Test');
+    const delta = InMemoryData.serializePendingDelta();
+
+    const key = serializeKeys('Todo:1', 'name');
+    expect(Object.keys(delta)).toHaveLength(1);
+    expect(JSON.parse(delta[key]!)).toBe('Test');
+
+    // Capture is reset after the call — subsequent call returns nothing
+    const delta2 = InMemoryData.serializePendingDelta();
+    expect(Object.keys(delta2)).toHaveLength(0);
+  });
+
+  it('serializePendingDelta captures link writes', () => {
+    InMemoryData.startBroadcastCapture();
+    InMemoryData.writeLink('Query', 'todo', 'Todo:1');
+    const delta = InMemoryData.serializePendingDelta();
+
+    const key = serializeKeys('Query', 'todo');
+    expect(Object.keys(delta)).toHaveLength(1);
+    // Links are serialized with a ':' prefix
+    expect(delta[key]).toBe(':"Todo:1"');
+  });
+
+  it('serializePendingDelta captures optimistic writes', () => {
+    InMemoryData.clearDataState();
+    InMemoryData.startBroadcastCapture();
+    InMemoryData.initDataState('write', data, 42, true);
+    InMemoryData.writeRecord('Todo:1', 'name', 'Optimistic');
+    const delta = InMemoryData.serializePendingDelta();
+    InMemoryData.clearDataState();
+
+    const key = serializeKeys('Todo:1', 'name');
+    expect(JSON.parse(delta[key]!)).toBe('Optimistic');
+  });
+
+  it('serializePendingDelta returns empty when capture is not started', () => {
+    InMemoryData.writeRecord('Todo:1', 'name', 'Test');
+    const delta = InMemoryData.serializePendingDelta();
+    expect(Object.keys(delta)).toHaveLength(0);
+  });
+
+  it('applyDelta writes record entries to the base layer', () => {
+    InMemoryData.clearDataState();
+
+    const key = serializeKeys('Todo:1', 'name');
+    InMemoryData.applyDelta(data, { [key]: '"New Value"' });
+
+    InMemoryData.initDataState('read', data, null);
+    expect(InMemoryData.readRecord('Todo:1', 'name')).toBe('New Value');
+    InMemoryData.clearDataState();
+  });
+
+  it('applyDelta writes link entries to the base layer', () => {
+    InMemoryData.clearDataState();
+
+    const key = serializeKeys('Query', 'todo');
+    InMemoryData.applyDelta(data, { [key]: ':"Todo:1"' });
+
+    InMemoryData.initDataState('read', data, null);
+    expect(InMemoryData.readLink('Query', 'todo')).toBe('Todo:1');
+    InMemoryData.clearDataState();
+  });
+
+  it('applyDelta with a layerKey writes to the optimistic layer', () => {
+    InMemoryData.clearDataState();
+
+    // Write a base value first
+    InMemoryData.initDataState('write', data, null);
+    InMemoryData.writeRecord('Todo:1', 'name', 'Base');
+    InMemoryData.clearDataState();
+
+    // Apply delta to an optimistic layer — queries should immediately see it
+    const key = serializeKeys('Todo:1', 'name');
+    InMemoryData.applyDelta(data, { [key]: '"Optimistic"' }, 99);
+
+    InMemoryData.initDataState('read', data, null);
+    expect(InMemoryData.readRecord('Todo:1', 'name')).toBe('Optimistic');
+    InMemoryData.clearDataState();
+
+    // Clearing the optimistic layer should reveal the base value again
+    InMemoryData.noopDataState(data, 99);
+    InMemoryData.initDataState('read', data, null);
+    expect(InMemoryData.readRecord('Todo:1', 'name')).toBe('Base');
+    InMemoryData.clearDataState();
+  });
+
+  it('applyDelta overwrites existing base-layer values', () => {
+    InMemoryData.clearDataState();
+
+    InMemoryData.initDataState('write', data, null);
+    InMemoryData.writeRecord('Todo:1', 'name', 'Old');
+    InMemoryData.clearDataState();
+
+    const key = serializeKeys('Todo:1', 'name');
+    InMemoryData.applyDelta(data, { [key]: '"New"' });
+
+    InMemoryData.initDataState('read', data, null);
+    expect(InMemoryData.readRecord('Todo:1', 'name')).toBe('New');
+    InMemoryData.clearDataState();
   });
 });

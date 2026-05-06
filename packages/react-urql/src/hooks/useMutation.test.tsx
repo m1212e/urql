@@ -19,7 +19,7 @@ vi.mock('../context', async () => {
 });
 
 import { print } from 'graphql';
-import { gql } from '@urql/core';
+import { gql } from '@m1212e/urql-core';
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 

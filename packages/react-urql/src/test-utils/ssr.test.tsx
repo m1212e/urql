@@ -14,7 +14,7 @@ import {
   Operation,
   OperationResult,
   makeOperation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { Provider } from '../context';
 import { useQuery } from '../hooks';

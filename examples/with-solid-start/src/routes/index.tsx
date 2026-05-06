@@ -1,7 +1,7 @@
 import { Suspense, For, Show, createSignal } from 'solid-js';
 import { createAsync, useAction, useSubmission } from '@solidjs/router';
-import { gql } from '@urql/core';
-import { createQuery, createMutation } from '@urql/solid-start';
+import { gql } from '@m1212e/urql-core';
+import { createQuery, createMutation } from '@m1212e/urql-solid-start';
 
 const POKEMONS_QUERY = gql`
   query Pokemons {

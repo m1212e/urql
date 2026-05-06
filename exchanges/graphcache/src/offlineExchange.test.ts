@@ -4,7 +4,7 @@ import {
   ExchangeIO,
   Operation,
   OperationResult,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { vi, expect, it, describe, beforeAll, afterAll } from 'vitest';
 
 import { pipe, share, map, makeSubject, tap, publish } from 'wonka';

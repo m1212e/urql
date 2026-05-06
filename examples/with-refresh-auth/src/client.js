@@ -1,5 +1,5 @@
-import { Client, fetchExchange, cacheExchange, gql } from 'urql';
-import { authExchange } from '@urql/exchange-auth';
+import { Client, fetchExchange, cacheExchange, gql } from '@m1212e/urql';
+import { authExchange } from '@m1212e/urql-exchange-auth';
 
 import {
   getRefreshToken,

@@ -4,7 +4,7 @@ import {
   type OperationContext,
   type OperationResult,
   createRequest,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import type { Action } from '@solidjs/router';
 import { pipe, filter, take, toPromise } from 'wonka';
 import { useAction, useClient } from './context';
@@ -32,9 +32,9 @@ export type CreateMutationAction<
  *
  * @example
  * ```tsx
- * import { createMutation } from '@urql/solid-start';
+ * import { createMutation } from '@m1212e/urql-solid-start';
  * import { useAction, useSubmission } from '@solidjs/router';
- * import { gql } from '@urql/core';
+ * import { gql } from '@m1212e/urql-core';
  *
  * function AddTodoForm() {
  *   const addTodoAction = createMutation(

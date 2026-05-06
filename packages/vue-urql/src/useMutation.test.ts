@@ -1,4 +1,4 @@
-import { OperationResult, OperationResultSource } from '@urql/core';
+import { OperationResult, OperationResultSource } from '@m1212e/urql-core';
 import { readonly } from 'vue';
 import { vi, expect, it, beforeEach, describe } from 'vitest';
 
@@ -12,7 +12,7 @@ vi.mock('./useClient.ts', async () => {
 });
 
 import { makeSubject } from 'wonka';
-import { createClient, gql } from '@urql/core';
+import { createClient, gql } from '@m1212e/urql-core';
 import { useMutation } from './useMutation';
 
 const client = createClient({ url: '/graphql', exchanges: [] });

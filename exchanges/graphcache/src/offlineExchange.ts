@@ -7,8 +7,8 @@ import type {
   ExchangeIO,
   CombinedError,
   RequestPolicy,
-} from '@urql/core';
-import { stringifyDocument, createRequest, makeOperation } from '@urql/core';
+} from '@m1212e/urql-core';
+import { stringifyDocument, createRequest, makeOperation } from '@m1212e/urql-core';
 
 import type {
   SerializedRequest,

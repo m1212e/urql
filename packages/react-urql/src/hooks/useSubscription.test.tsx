@@ -17,7 +17,7 @@ vi.mock('../context', async () => {
 
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
-import { OperationContext } from '@urql/core';
+import { OperationContext } from '@m1212e/urql-core';
 
 import { useSubscription, UseSubscriptionState } from './useSubscription';
 import { useClient } from '../context';

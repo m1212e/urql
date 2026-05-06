@@ -1,5 +1,5 @@
 {
-  "name": "@urql/vue",
+  "name": "@m1212e/urql-vue",
   "version": "2.1.0",
   "description": "A highly customizable and versatile GraphQL client for vue",
   "sideEffects": false,
@@ -20,15 +20,15 @@
     "exchanges",
     "vue"
   ],
-  "main": "dist/urql-vue",
-  "module": "dist/urql-vue.mjs",
-  "types": "dist/urql-vue.d.ts",
+  "main": "dist/m1212e-urql-vue",
+  "module": "dist/m1212e-urql-vue.mjs",
+  "types": "dist/m1212e-urql-vue.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/urql-vue.d.ts",
-      "import": "./dist/urql-vue.mjs",
-      "require": "./dist/urql-vue.js",
+      "types": "./dist/m1212e-urql-vue.d.ts",
+      "import": "./dist/m1212e-urql-vue.mjs",
+      "require": "./dist/m1212e-urql-vue.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -49,21 +49,22 @@
     "prepublishOnly": "run-s clean build"
   },
   "devDependencies": {
-    "@urql/core": "workspace:*",
+    "@m1212e/urql-core": "workspace:*",
     "@vue/test-utils": "^2.3.0",
     "graphql": "^16.0.0",
     "vue": "^3.2.47"
   },
   "peerDependencies": {
-    "@urql/core": "^6.0.0",
+    "@m1212e/urql-core": "^6.0.0",
     "vue": "^3.2.0"
   },
   "dependencies": {
-    "@urql/core": "workspace:^6.0.1",
+    "@m1212e/urql-core": "workspace:^6.0.1",
     "wonka": "^6.3.2"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

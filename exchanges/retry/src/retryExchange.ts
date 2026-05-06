@@ -9,8 +9,8 @@ import {
   takeUntil,
 } from 'wonka';
 
-import type { Exchange, Operation, CombinedError } from '@urql/core';
-import { makeOperation } from '@urql/core';
+import type { Exchange, Operation, CombinedError } from '@m1212e/urql-core';
+import { makeOperation } from '@m1212e/urql-core';
 
 /** Input parameters for the {@link retryExchange}. */
 export interface RetryExchangeOptions {

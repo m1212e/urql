@@ -2,7 +2,7 @@
 
 import { renderHook, act } from '@testing-library/react';
 import { interval, map, pipe } from 'wonka';
-import { RequestPolicy } from '@urql/core';
+import { RequestPolicy } from '@m1212e/urql-core';
 import { vi, expect, it, beforeEach, describe, beforeAll, Mock } from 'vitest';
 
 import { useClient } from '../context';

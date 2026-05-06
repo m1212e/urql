@@ -7,7 +7,7 @@ import {
   type OperationResult,
   type CombinedError,
   createRequest,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 import { useClient } from './context';
 import { pipe, onPush, filter, take, toPromise } from 'wonka';
 import { batch } from 'solid-js';
@@ -113,7 +113,7 @@ export type CreateMutationResult<
  *
  * @example
  * ```ts
- * import { gql, createMutation } from '@urql/solid';
+ * import { gql, createMutation } from '@m1212e/urql-solid';
  *
  * const UpdateTodo = gql`
  *   mutation ($id: ID!, $title: String!) {

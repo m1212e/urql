@@ -1,4 +1,4 @@
-import type { Client } from '@urql/core';
+import type { Client } from '@m1212e/urql-core';
 import { createContext, useContext } from 'solid-js';
 import type {
   query as defaultQuery,

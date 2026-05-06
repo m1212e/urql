@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-import { OperationResult, OperationResultSource } from '@urql/core';
+import { OperationResult, OperationResultSource } from '@m1212e/urql-core';
 import { nextTick, readonly, ref } from 'vue';
 import { vi, expect, it, describe } from 'vitest';
 
@@ -11,7 +11,7 @@ vi.mock('./useClient.ts', async () => ({
 }));
 
 import { makeSubject } from 'wonka';
-import { createClient } from '@urql/core';
+import { createClient } from '@m1212e/urql-core';
 import { useSubscription } from './useSubscription';
 
 const client = createClient({ url: '/graphql', exchanges: [] });

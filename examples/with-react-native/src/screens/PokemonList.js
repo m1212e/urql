@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, FlatList, View } from 'react-native';
-import { gql, useQuery } from 'urql';
+import { gql, useQuery } from '@m1212e/urql';
 
 const POKEMONS_QUERY = gql`
   query Pokemons {

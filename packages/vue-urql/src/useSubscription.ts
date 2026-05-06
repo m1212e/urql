@@ -12,7 +12,7 @@ import type {
   CombinedError,
   OperationContext,
   Operation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { useClient } from './useClient';
 
@@ -199,7 +199,7 @@ export interface UseSubscriptionResponse<
  *
  * @example
  * ```ts
- * import { gql, useSubscription } from '@urql/vue';
+ * import { gql, useSubscription } from '@m1212e/urql-vue';
  *
  * const NotificationsSubscription = gql`
  *   subscription { newNotification { id, text } }

@@ -22,7 +22,7 @@ vi.mock('../context', async () => {
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { pipe, onStart, onEnd, never } from 'wonka';
-import { OperationContext } from '@urql/core';
+import { OperationContext } from '@m1212e/urql-core';
 
 import { useQuery, UseQueryArgs, UseQueryState } from './useQuery';
 import { useClient } from '../context';

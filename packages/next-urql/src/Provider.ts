@@ -1,8 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import type { SSRExchange, Client } from 'urql';
-import { Provider } from 'urql';
+import type { SSRExchange, Client } from '@m1212e/urql';
+import { Provider } from '@m1212e/urql';
 import { DataHydrationContextProvider } from './DataHydrationContext';
 
 export const SSRContext = React.createContext<SSRExchange | undefined>(
@@ -25,7 +25,7 @@ export const SSRContext = React.createContext<SSRExchange | undefined>(
  *  cacheExchange,
  *  fetchExchange,
  *  createClient,
- * } from '@urql/next';
+ * } from '@m1212e/urql-next';
  *
  * export default function Layout({ children }: React.PropsWithChildren) {
  *  const [client, ssr] = useMemo(() => {

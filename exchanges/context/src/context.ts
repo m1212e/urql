@@ -1,5 +1,5 @@
-import type { Exchange, Operation, OperationContext } from '@urql/core';
-import { makeOperation } from '@urql/core';
+import type { Exchange, Operation, OperationContext } from '@m1212e/urql-core';
+import { makeOperation } from '@m1212e/urql-core';
 
 import { fromPromise, fromValue, mergeMap, pipe } from 'wonka';
 
@@ -39,8 +39,8 @@ export interface ContextExchangeArgs {
  *
  * @example
  * ```ts
- * import { Client, cacheExchange, fetchExchange } from '@urql/core';
- * import { contextExchange } from '@urql/exchange-context';
+ * import { Client, cacheExchange, fetchExchange } from '@m1212e/urql-core';
+ * import { contextExchange } from '@m1212e/urql-exchange-context';
  *
  * const client = new Client({
  *   url: '',

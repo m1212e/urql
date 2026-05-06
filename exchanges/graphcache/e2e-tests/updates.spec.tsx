@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { executeExchange } from '@urql/exchange-execute';
+import { executeExchange } from '@m1212e/urql-exchange-execute';
 import { buildSchema } from 'graphql';
 import { mount } from '@cypress/react';
 
@@ -10,7 +10,7 @@ import {
   useQuery,
   useMutation,
   debugExchange,
-} from 'urql';
+} from '@m1212e/urql';
 
 import { cacheExchange } from '../src';
 

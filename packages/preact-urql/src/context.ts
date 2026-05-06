@@ -1,6 +1,6 @@
 import { createContext } from 'preact';
 import { useContext } from 'preact/hooks';
-import type { Client } from '@urql/core';
+import type { Client } from '@m1212e/urql-core';
 
 const OBJ = {};
 
@@ -24,9 +24,9 @@ export const Context: import('preact').Context<Client | object> =
  *
  * @example
  * ```tsx
- * import { Provider } from '@urql/preact';
+ * import { Provider } from '@m1212e/urql-preact';
  * // All of `@urql/core` is also re-exported by `@urql/preact`:
- * import { Client, cacheExchange, fetchExchange } from '@urql/core';
+ * import { Client, cacheExchange, fetchExchange } from '@m1212e/urql-core';
  *
  * const client = new Client({
  *   url: 'https://API',

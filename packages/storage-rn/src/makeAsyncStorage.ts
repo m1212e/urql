@@ -1,4 +1,4 @@
-import type { StorageAdapter } from '@urql/exchange-graphcache';
+import type { StorageAdapter } from '@m1212e/urql-exchange-graphcache';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import NetInfo from '@react-native-community/netinfo';
 

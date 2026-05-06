@@ -1,5 +1,5 @@
 {
-  "name": "@urql/storage-rn",
+  "name": "@m1212e/urql-storage-rn",
   "version": "1.1.2",
   "sideEffects": false,
   "description": "Graphcache offline storage for React Native",
@@ -21,9 +21,9 @@
     "offline",
     "storage"
   ],
-  "main": "dist/urql-storage-rn",
-  "module": "dist/urql-storage-rn.mjs",
-  "types": "dist/urql-storage-rn.d.ts",
+  "main": "dist/m1212e-urql-storage-rn",
+  "module": "dist/m1212e-urql-storage-rn.mjs",
+  "types": "dist/m1212e-urql-storage-rn.d.ts",
   "source": "src/index.ts",
   "files": [
     "LICENSE",
@@ -33,9 +33,9 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/urql-storage-rn.d.ts",
-      "import": "./dist/urql-storage-rn.mjs",
-      "require": "./dist/urql-storage-rn.js",
+      "types": "./dist/m1212e-urql-storage-rn.d.ts",
+      "import": "./dist/m1212e-urql-storage-rn.mjs",
+      "require": "./dist/m1212e-urql-storage-rn.js",
       "source": "./src/index.ts"
     },
     "./package.json": "./package.json"
@@ -51,16 +51,17 @@
   "peerDependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5 || ^2.0.0",
     "@react-native-community/netinfo": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^11.0.0",
-    "@urql/exchange-graphcache": ">=5.0.0"
+    "@m1212e/urql-exchange-graphcache": ">=5.0.0"
   },
   "devDependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-community/netinfo": "^11.2.1",
-    "@urql/core": "workspace:*",
-    "@urql/exchange-graphcache": "workspace:*"
+    "@m1212e/urql-core": "workspace:*",
+    "@m1212e/urql-exchange-graphcache": "workspace:*"
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://npm.pkg.github.com"
   }
 }

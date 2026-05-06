@@ -21,7 +21,7 @@ import type {
   RequestPolicy,
   OperationResult,
   Operation,
-} from '@urql/core';
+} from '@m1212e/urql-core';
 
 import { useClient } from '../context';
 import { useSource } from './useSource';
@@ -241,7 +241,7 @@ const sources = new Map<number, Source<OperationResult>>();
  *
  * @example
  * ```ts
- * import { gql, useQuery } from '@urql/preact';
+ * import { gql, useQuery } from '@m1212e/urql-preact';
  *
  * const TodosQuery = gql`
  *   query { todos { id, title } }

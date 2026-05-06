@@ -15,8 +15,8 @@ import type {
   ExecutionResult,
   Operation,
   OperationResult,
-} from '@urql/core';
-import { makeResult, makeErrorResult, mergeResultPatch } from '@urql/core';
+} from '@m1212e/urql-core';
+import { makeResult, makeErrorResult, mergeResultPatch } from '@m1212e/urql-core';
 
 /** Input parameters for the {@link executeExchange}.
  * @see {@link ExecutionArgs} which this interface mirrors. */

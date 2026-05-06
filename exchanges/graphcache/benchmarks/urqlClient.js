@@ -1,6 +1,6 @@
-import { createClient } from '@urql/core';
-import { cacheExchange } from '@urql/exchange-graphcache';
-import { executeExchange } from '@urql/exchange-execute';
+import { createClient } from '@m1212e/urql-core';
+import { cacheExchange } from '@m1212e/urql-exchange-graphcache';
+import { executeExchange } from '@m1212e/urql-exchange-execute';
 import { buildSchema } from 'graphql';
 import { ALL_TODOS_QUERY } from './operations';
 
