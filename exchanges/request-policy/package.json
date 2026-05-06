@@ -9,7 +9,7 @@
   "author": "urql GraphQL Contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/urql-graphql/urql.git",
+    "url": "https://github.com/m1212e/urql.git",
     "directory": "exchanges/request-policy"
   },
   "keywords": [
