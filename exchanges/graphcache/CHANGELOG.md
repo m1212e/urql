@@ -1,5 +1,12 @@
 # @urql/exchange-graphcache
 
+## 9.0.1
+
+### Patch Changes
+
+- add a broadcast api based cross tab sync for cache changes
+  Submitted by [@m1212e](https://github.com/m1212e) (See [`a33445c`](https://github.com/urql-graphql/urql/commit/a33445c38154419a85ec8afbc5955b7b2b2960fc))
+
 ## 9.0.0
 
 ### Major Changes
