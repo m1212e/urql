@@ -64,5 +64,6 @@
     "access": "public",
     "provenance": true,
     "registry": "https://npm.pkg.github.com"
-  }
+  },
+  "private": true
 }

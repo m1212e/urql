@@ -56,10 +56,8 @@ jobs:
           UPSTREAM_TAG="${{ steps.check.outputs.upstream_latest }}"
           LAST_TAG="${{ steps.check.outputs.last_synced }}"
 
-          # Transform any upstream changeset files (@urql/ -> @m1212e/urql-)
-          find .changeset -name "*.md" -not -name "README.md" | xargs -r sed -i \
-            -e "s|'@urql/\([^']*\)'|'@m1212e/urql-\1'|g" \
-            -e "s|'urql':|'@m1212e/urql':|g"
+          # Drop upstream changeset files entirely — they cover packages we don't publish
+          find .changeset -name "*.md" -not -name "README.md" -not -name "full-plants-bathe.md" | xargs -r rm -f
 
           # Determine bump type from version difference
           NEW_VERSION=$(echo "$UPSTREAM_TAG" | sed 's/.*@//')
@@ -78,32 +76,8 @@ jobs:
           fi
 
           SYNC_FILE=".changeset/upstream-sync-$(echo $UPSTREAM_TAG | tr '@/' '--').md"
-          cat > "$SYNC_FILE" << CHANGESET
-          ---
-          '@m1212e/urql': $BUMP_TYPE
-          '@m1212e/urql-core': $BUMP_TYPE
-          '@m1212e/urql-exchange-auth': $BUMP_TYPE
-          '@m1212e/urql-exchange-context': $BUMP_TYPE
-          '@m1212e/urql-exchange-execute': $BUMP_TYPE
-          '@m1212e/urql-exchange-graphcache': $BUMP_TYPE
-          '@m1212e/urql-exchange-persisted': $BUMP_TYPE
-          '@m1212e/urql-exchange-populate': $BUMP_TYPE
-          '@m1212e/urql-exchange-refocus': $BUMP_TYPE
-          '@m1212e/urql-exchange-request-policy': $BUMP_TYPE
-          '@m1212e/urql-exchange-retry': $BUMP_TYPE
-          '@m1212e/urql-exchange-throw-on-error': $BUMP_TYPE
-          '@m1212e/urql-introspection': $BUMP_TYPE
-          '@m1212e/urql-next': $BUMP_TYPE
-          '@m1212e/urql-preact': $BUMP_TYPE
-          '@m1212e/urql-svelte': $BUMP_TYPE
-          '@m1212e/urql-vue': $BUMP_TYPE
-          '@m1212e/urql-solid': $BUMP_TYPE
-          '@m1212e/urql-solid-start': $BUMP_TYPE
-          '@m1212e/urql-storage-rn': $BUMP_TYPE
-          ---
-
-          Sync with upstream urql release $UPSTREAM_TAG
-          CHANGESET
+          printf -- "---\n'@m1212e/urql-exchange-graphcache': %s\n---\n\nSync with upstream urql release %s\n" \
+            "$BUMP_TYPE" "$UPSTREAM_TAG" > "$SYNC_FILE"
 
           echo "$UPSTREAM_TAG" > .github/upstream-sync-state
 
