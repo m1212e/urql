@@ -13,14 +13,24 @@ jobs:
       contents: write
       id-token: write
       packages: write
-      pull-requests: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for pending changesets
+        id: check
+        run: |
+          if find .changeset -name "*.md" -not -name "README.md" | grep -q .; then
+            echo "has_changesets=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changesets=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Setup Node
+        if: steps.check.outputs.has_changesets == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -28,19 +38,26 @@ jobs:
           scope: "@m1212e"
 
       - name: Setup pnpm
+        if: steps.check.outputs.has_changesets == 'true'
         uses: pnpm/action-setup@v3
         with:
           version: 9
           run_install: false
 
       - name: Install Dependencies
+        if: steps.check.outputs.has_changesets == 'true'
         run: pnpm install
 
-      - name: PR or Publish
-        uses: changesets/action@v1.5.3
-        with:
-          version: pnpm changeset:version
-          publish: pnpm changeset:publish
+      - name: Version and publish
+        if: steps.check.outputs.has_changesets == 'true'
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          pnpm changeset version
+          pnpm changeset publish
+          git add -A
+          git commit -m "chore: version packages" --allow-empty
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
